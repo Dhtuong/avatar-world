@@ -1,0 +1,309 @@
+[gd_scene format=3 uid="uid://dpqajk4r3iq1"]
+
+[ext_resource type="PackedScene" uid="uid://chvkcspj573sx" path="res://scenes/character/player.tscn" id="1_k8cvo"]
+[ext_resource type="Script" uid="uid://bejciima4bb8p" path="res://scripts/farm_exit_gate.gd" id="2_22d3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crx7y"]
+size = Vector2(96, 14)
+
+[node name="PersonalFarm" type="Node2D" unique_id=1282882466]
+
+[node name="Player" parent="." unique_id=755192811 instance=ExtResource("1_k8cvo")]
+position = Vector2(0, 150)
+
+[node name="EntryFromGate" type="Marker2D" parent="." unique_id=1645241916]
+position = Vector2(0, 150)
+
+[node name="ExitGate" type="Area2D" parent="." unique_id=561114442]
+position = Vector2(0, 240)
+script = ExtResource("2_22d3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGate" unique_id=1616285087]
+shape = SubResource("RectangleShape2D_crx7y")
+
+[node name="ExitGate" type="Label" parent="ExitGate" unique_id=1551580343]
+offset_left = -25.0
+offset_top = -30.0
+offset_right = 19.0
+offset_bottom = -7.0
+text = "Lối ra"
+
+[node name="Ground" type="Node2D" parent="." unique_id=272443716]
+
+[node name="GrassFloor" type="Polygon2D" parent="Ground" unique_id=1601136434]
+z_index = -20
+color = Color(0.5372549, 0.7882353, 0.41960785, 1)
+polygon = PackedVector2Array(-764, -524, 786, -524, 786, 269, -766, 270)
+
+[node name="FarmField" type="Node2D" parent="." unique_id=1604159683]
+
+[node name="FieldGround" type="Polygon2D" parent="FarmField" unique_id=1761488362]
+z_index = -15
+color = Color(0.8, 0.5921569, 0.3137255, 1)
+polygon = PackedVector2Array(3, -401, 3, -281, 282, -280, 282, -401)
+
+[node name="Plots" type="Node2D" parent="FarmField/FieldGround" unique_id=1813930566]
+
+[node name="Plot01" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=209242389]
+position = Vector2(-1, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Plot02" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=958363809]
+position = Vector2(52, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Plot03" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=1006788948]
+position = Vector2(52, 88)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Plot04" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=706047210]
+position = Vector2(107, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D6" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=1406645480]
+position = Vector2(107, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D8" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=104390453]
+position = Vector2(160.00002, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D9" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=252210711]
+position = Vector2(214.00002, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D7" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=142025919]
+position = Vector2(161.00002, 35)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D10" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=1766597895]
+position = Vector2(214, 35)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D2" type="Polygon2D" parent="FarmField/FieldGround/Plots" unique_id=1993383520]
+position = Vector2(0, 88)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="FieldGround2" type="Polygon2D" parent="FarmField" unique_id=8036021]
+z_index = -15
+position = Vector2(3, 153)
+color = Color(0.8, 0.5921569, 0.3137255, 1)
+polygon = PackedVector2Array(3, -401, 3, -281, 282, -280, 282, -401, 226.49097, -400.99997)
+
+[node name="Plots" type="Node2D" parent="FarmField/FieldGround2" unique_id=1119389885]
+
+[node name="Polygon2D1" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=1474121712]
+position = Vector2(-1, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D3" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=838216232]
+position = Vector2(52, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D4" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=468829697]
+position = Vector2(52, 88)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D5" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=2029070021]
+position = Vector2(107, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D6" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=1679146835]
+position = Vector2(107, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D8" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=1031169556]
+position = Vector2(160.00002, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D9" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=956431957]
+position = Vector2(214.00002, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D7" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=1306416087]
+position = Vector2(161.00002, 35)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D10" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=938153989]
+position = Vector2(214, 35)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D2" type="Polygon2D" parent="FarmField/FieldGround2/Plots" unique_id=1166121603]
+position = Vector2(0, 88)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="FieldGround3" type="Polygon2D" parent="FarmField" unique_id=546288685]
+z_index = -15
+position = Vector2(315, 153)
+color = Color(0.8, 0.5921569, 0.3137255, 1)
+polygon = PackedVector2Array(3, -401, 3, -281, 282, -280, 282, -401, 226.49097, -400.99997)
+
+[node name="Plots" type="Node2D" parent="FarmField/FieldGround3" unique_id=1843564054]
+
+[node name="Polygon2D1" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=1442360959]
+position = Vector2(-1, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D3" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=861520740]
+position = Vector2(52, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D4" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=801603392]
+position = Vector2(52, 88)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D5" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=1320988574]
+position = Vector2(107, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D6" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=258224792]
+position = Vector2(107, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D8" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=1144761033]
+position = Vector2(160.00002, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D9" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=1778739371]
+position = Vector2(214.00002, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D7" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=5099300]
+position = Vector2(161.00002, 35)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D10" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=1406406953]
+position = Vector2(214, 35)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D2" type="Polygon2D" parent="FarmField/FieldGround3/Plots" unique_id=2060864265]
+position = Vector2(0, 88)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="FieldGround4" type="Polygon2D" parent="FarmField" unique_id=2050216847]
+z_index = -15
+position = Vector2(315, 4)
+color = Color(0.8, 0.5921569, 0.3137255, 1)
+polygon = PackedVector2Array(3, -401, 3, -281, 282, -280, 282, -401, 226.49097, -400.99997)
+
+[node name="Plots" type="Node2D" parent="FarmField/FieldGround4" unique_id=1477959022]
+
+[node name="Polygon2D1" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=219051967]
+position = Vector2(-1, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D3" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=2071620511]
+position = Vector2(52, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D4" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=1523800805]
+position = Vector2(52, 88)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D5" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=1707026279]
+position = Vector2(107, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D6" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=834488893]
+position = Vector2(107, 36)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D8" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=2094140966]
+position = Vector2(160.00002, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D9" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=559390029]
+position = Vector2(214.00002, 87)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D7" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=1283010144]
+position = Vector2(161.00002, 35)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D10" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=1878492349]
+position = Vector2(214, 35)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)
+
+[node name="Polygon2D2" type="Polygon2D" parent="FarmField/FieldGround4/Plots" unique_id=900659743]
+position = Vector2(0, 88)
+scale = Vector2(1.03125, 1.074074)
+color = Color(0.54509807, 0.3529412, 0.16862746, 1)
+polygon = PackedVector2Array(15, -394, 14.545455, -358.4483, 56.242424, -358.4483, 56.242424, -394.75864)

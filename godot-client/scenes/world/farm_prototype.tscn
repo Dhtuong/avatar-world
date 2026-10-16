@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b5t5l0xicl5pj"]
+
+[ext_resource type="PackedScene" uid="uid://chvkcspj573sx" path="res://scenes/character/player.tscn" id="1_5sqx7"]
+[ext_resource type="Script" uid="uid://dteyqfrv4bi2d" path="res://scripts/farm_prototype.gd" id="1_8a70e"]
+
+[sub_resource type="GDScript" id="GDScript_hc608"]
+script/source = "
+extends Area2D
+
+# ==========================================
+# AVATAR WORLD - FARM GATE
+# ==========================================
+
+# Scene nông trại bên trong
+@export_file(\"*.tscn\") var target_scene: String = \"res://scenes/world/personal_farm.tscn\"
+
+# Ngăn chuyển scene nhiều lần
+var changing_scene: bool = false
+
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if changing_scene:
+		return
+
+	if body.name != \"Player\":
+		return
+
+	changing_scene = true
+
+	print(\"FARM: Player đã đi qua cổng FARM\")
+	print(\"FARM: Đang vào nông trại bên trong...\")
+
+	# Chờ physics xử lý xong rồi mới chuyển scene
+	get_tree().call_deferred(
+		\"change_scene_to_file\",
+		target_scene
+	)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crx7y"]
+size = Vector2(96, 16)
+
+[node name="FarmPrototype" type="Node2D" unique_id=1374935845]
+script = ExtResource("1_8a70e")
+
+[node name="Player" parent="." unique_id=755192811 instance=ExtResource("1_5sqx7")]
+position = Vector2(0, 200)
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=407226901]
+position = Vector2(0, 200)
+
+[node name="Background" type="Node2D" parent="." unique_id=239911931]
+
+[node name="Sky" type="Polygon2D" parent="Background" unique_id=1037272867]
+z_index = -20
+position = Vector2(-2.424408, -3.1360016)
+scale = Vector2(0.9944009, 0.976)
+color = Color(0.10980392, 1, 1, 1)
+polygon = PackedVector2Array(-433, -214, -433, -90, 460, -89, 459.99997, -209.90166)
+
+[node name="Grass" type="Polygon2D" parent="Background" unique_id=1002557789]
+z_index = -15
+color = Color(0.10980392, 1, 0.14117648, 1)
+polygon = PackedVector2Array(-436, -91, -437, 14, 457, 14, 455, -91)
+
+[node name="Path" type="Polygon2D" parent="." unique_id=756199936]
+z_index = -10
+color = Color(0.6084056, 0.30114728, 0, 1)
+polygon = PackedVector2Array(-436, 14, -434, 294, 457, 300, 457, 14)
+
+[node name="Buildings" type="Node2D" parent="." unique_id=292219566]
+
+[node name="FarmGate" type="Polygon2D" parent="Buildings" unique_id=89157981]
+z_index = -5
+color = Color(1, 0.6509804, 1, 1)
+polygon = PackedVector2Array(-74, -51, -75, 44, 77, 42, 74, -49)
+uv = PackedVector2Array(-78, -45, -75, 44, 77, 42, 75, -49)
+
+[node name="FarmShop" type="Polygon2D" parent="Buildings" unique_id=779028259]
+z_index = -5
+position = Vector2(0, -4)
+color = Color(1, 1, 0.5647059, 1)
+polygon = PackedVector2Array(240, -42, 240, 47, 375, 46, 376, -42)
+
+[node name="RankingBoard" type="Polygon2D" parent="Buildings" unique_id=1694674593]
+z_index = -5
+color = Color(0.2901961, 0.5921569, 0.1764706, 1)
+polygon = PackedVector2Array(-349, -43, -343, 41, -224, 43, -222, -42)
+
+[node name="FarmGateTrigger" type="Area2D" parent="." unique_id=1588189590]
+position = Vector2(0, 10)
+script = SubResource("GDScript_hc608")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarmGateTrigger" unique_id=367298452]
+shape = SubResource("RectangleShape2D_crx7y")
+
+[node name="EntryFromPersonalFarm" type="Marker2D" parent="." unique_id=979120975]
+position = Vector2(0, 60)

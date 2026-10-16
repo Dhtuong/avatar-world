@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bdoetnuoa1ooc"]
+
+[ext_resource type="PackedScene" uid="uid://chvkcspj573sx" path="res://scenes/character/player.tscn" id="1_lfkiw"]
+[ext_resource type="Texture2D" uid="uid://c1138mupbppnc" path="res://icon.svg" id="2_f6ypc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crx7y"]
+size = Vector2(200, 32)
+
+[node name="TestRoom" type="Node2D" unique_id=1187911701]
+
+[node name="Player" parent="." unique_id=755192811 instance=ExtResource("1_lfkiw")]
+
+[node name="TestWall" type="StaticBody2D" parent="." unique_id=803489108]
+position = Vector2(150, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestWall" unique_id=1284760072]
+shape = SubResource("RectangleShape2D_crx7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestWall" unique_id=648906475]
+position = Vector2(-2.0000305, 0.99999905)
+scale = Vector2(1.5703126, 0.25634763)
+texture = ExtResource("2_f6ypc")
+
+[node name="Floor" type="Polygon2D" parent="." unique_id=1874680062]
+z_index = -10
+color = Color(0.24873996, 0.34199, 0.30877906, 1)
+polygon = PackedVector2Array(-108, -163, -108, 227, 647, 228, 648, -163)

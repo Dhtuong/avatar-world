@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://jvi5biic6w78"]
+
+[ext_resource type="PackedScene" uid="uid://chvkcspj573sx" path="res://scenes/character/player.tscn" id="1_phkyx"]
+[ext_resource type="Script" uid="uid://y534knv5pxbe" path="res://scripts/exit_door.gd" id="2_n1n1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crx7y"]
+size = Vector2(640, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqsym"]
+size = Vector2(32, 384)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6p7e2"]
+size = Vector2(288, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqmkc"]
+size = Vector2(64, 32)
+
+[node name="HomePrototype" type="Node2D" unique_id=1822557901]
+
+[node name="Player" parent="." unique_id=755192811 instance=ExtResource("1_phkyx")]
+position = Vector2(0, 100)
+
+[node name="RoomBounds" type="StaticBody2D" parent="." unique_id=1403579853]
+
+[node name="WallTop" type="CollisionShape2D" parent="RoomBounds" unique_id=708329676]
+position = Vector2(0, -192)
+shape = SubResource("RectangleShape2D_crx7y")
+
+[node name="WallLeft" type="CollisionShape2D" parent="RoomBounds" unique_id=409754805]
+position = Vector2(-320, 0)
+shape = SubResource("RectangleShape2D_rqsym")
+
+[node name="WallRight" type="CollisionShape2D" parent="RoomBounds" unique_id=1100315111]
+position = Vector2(320, 0)
+shape = SubResource("RectangleShape2D_rqsym")
+
+[node name="WallBottomLeft" type="CollisionShape2D" parent="RoomBounds" unique_id=1756928608]
+position = Vector2(-176, 192)
+shape = SubResource("RectangleShape2D_6p7e2")
+
+[node name="WallBottomRight" type="CollisionShape2D" parent="RoomBounds" unique_id=204813111]
+position = Vector2(176, 192)
+shape = SubResource("RectangleShape2D_6p7e2")
+
+[node name="Floor" type="Polygon2D" parent="." unique_id=719846528]
+z_index = -10
+color = Color(0.46618086, 0.4661808, 0.4661808, 1)
+polygon = PackedVector2Array(-304, -176, -304, 176, 304, 176, 304, -176)
+
+[node name="ExitDoor" type="Area2D" parent="." unique_id=2127212764]
+script = ExtResource("2_n1n1k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor" unique_id=694155764]
+position = Vector2(0, 176)
+shape = SubResource("RectangleShape2D_xqmkc")

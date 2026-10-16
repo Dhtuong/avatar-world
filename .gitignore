@@ -1,0 +1,22 @@
+# Godot
+**/.godot/
+
+# Node.js
+**/node_modules/
+
+# Build
+**/dist/
+**/build/
+
+# Environment & secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Logs
+*.log
+
+# Windows
+Thumbs.db
+Desktop.ini

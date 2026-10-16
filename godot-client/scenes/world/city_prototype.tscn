@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://ovut7807tfm8"]
+
+[ext_resource type="Script" uid="uid://dp661fqcqio2n" path="res://scripts/city_prototype.gd" id="1_bpk1f"]
+[ext_resource type="PackedScene" uid="uid://chvkcspj573sx" path="res://scenes/character/player.tscn" id="1_svp32"]
+[ext_resource type="Texture2D" uid="uid://c1138mupbppnc" path="res://icon.svg" id="2_a0h3v"]
+[ext_resource type="Script" uid="uid://byoen8flotpdp" path="res://scripts/travel_point.gd" id="2_j7ui6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_crx7y"]
+radius = 40.0
+
+[node name="CityPrototype" type="Node2D" unique_id=1073279162]
+script = ExtResource("1_bpk1f")
+
+[node name="Player" parent="." unique_id=755192811 instance=ExtResource("1_svp32")]
+
+[node name="Ground" type="Node2D" parent="." unique_id=1974651299]
+
+[node name="CityFloor" type="Polygon2D" parent="Ground" unique_id=1594939588]
+z_index = -20
+color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+polygon = PackedVector2Array(-802, -452, -801, 464, 805, 467, 806, -451)
+
+[node name="Plaza" type="Node2D" parent="." unique_id=1447110401]
+
+[node name="PlazaFloor" type="Polygon2D" parent="Plaza" unique_id=1884173706]
+z_index = -10
+color = Color(0.43792462, 0.3746527, 0.13282204, 1)
+polygon = PackedVector2Array(-450, -157, -448, 155, 455, 155, 458, -157)
+
+[node name="TravelPoint" type="Node2D" parent="." unique_id=1973165915]
+position = Vector2(-680, 375)
+script = ExtResource("2_j7ui6")
+
+[node name="TravelVisual" type="Sprite2D" parent="TravelPoint" unique_id=2122060124]
+z_index = -1
+scale = Vector2(0.521, 0.531)
+texture = ExtResource("2_a0h3v")
+
+[node name="InteractionArea" type="Area2D" parent="TravelPoint" unique_id=1618865300]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TravelPoint/InteractionArea" unique_id=2004791059]
+shape = SubResource("CircleShape2D_crx7y")
+
+[node name="InteractionPrompt" type="Label" parent="TravelPoint" unique_id=844396661]
+visible = false
+offset_left = -45.0
+offset_top = -57.0
+offset_right = 56.0
+offset_bottom = -34.0
+text = "[E] Di chuyển"
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=754204009]
+position = Vector2(-679, 369)
+
+[node name="Buildings" type="Node2D" parent="." unique_id=1635024414]
+
+[node name="Library" type="Polygon2D" parent="Buildings" unique_id=1420481192]
+z_index = -5
+position = Vector2(-582, -312)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="FashionShop" type="Polygon2D" parent="Buildings" unique_id=988331963]
+z_index = -5
+position = Vector2(584, -316)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="AccessoryShop" type="Polygon2D" parent="Buildings" unique_id=456830296]
+z_index = -5
+position = Vector2(-5, -314)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="PetShop" type="Polygon2D" parent="Buildings" unique_id=809729673]
+z_index = -5
+position = Vector2(-290, -310)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="ConvenienceStore" type="Polygon2D" parent="Buildings" unique_id=776516649]
+z_index = -5
+position = Vector2(286, -315)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="Food" type="Polygon2D" parent="Buildings" unique_id=423529861]
+z_index = -5
+position = Vector2(-424, 373)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="Gym" type="Polygon2D" parent="Buildings" unique_id=921051501]
+z_index = -5
+position = Vector2(493, 362)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="RepairUpgrade" type="Polygon2D" parent="Buildings" unique_id=1623316780]
+z_index = -5
+position = Vector2(195, 369)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="Lottery" type="Polygon2D" parent="Buildings" unique_id=1224484383]
+z_index = -5
+position = Vector2(-113, 373)
+color = Color(0.6420295, 0.12224043, 0.45466083, 1)
+polygon = PackedVector2Array(-114, -71, -114, 58, 111, 58, 109, -71)
+
+[node name="TravelUI" type="CanvasLayer" parent="." unique_id=1254387071]
+
+[node name="TravelScreen" type="Control" parent="TravelUI" unique_id=16016563]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuCenter" type="CenterContainer" parent="TravelUI/TravelScreen" unique_id=1549368959]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TravelMenuPanel" type="PanelContainer" parent="TravelUI/TravelScreen/MenuCenter" unique_id=1653687244]
+custom_minimum_size = Vector2(420, 480)
+layout_mode = 2
+
+[node name="MenuMargin" type="MarginContainer" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel" unique_id=2107036164]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MenuContent" type="VBoxContainer" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin" unique_id=1705361644]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin/MenuContent" unique_id=984705678]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "CHỌN KHU VỰC"
+horizontal_alignment = 1
+
+[node name="CityButton" type="Button" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin/MenuContent" unique_id=2020346905]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Thành phố"
+
+[node name="ParkButton" type="Button" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin/MenuContent" unique_id=595899021]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Công viên"
+
+[node name="EntertainmentButton" type="Button" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin/MenuContent" unique_id=1469480714]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Khu giải trí"
+
+[node name="BeachButton" type="Button" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin/MenuContent" unique_id=586586945]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Bãi biển"
+
+[node name="FishingButton" type="Button" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin/MenuContent" unique_id=664559292]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Khu câu cá"
+
+[node name="FarmButton" type="Button" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin/MenuContent" unique_id=1797996689]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Nông trại"
+
+[node name="CloseButton" type="Button" parent="TravelUI/TravelScreen/MenuCenter/TravelMenuPanel/MenuMargin/MenuContent" unique_id=1278198670]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+text = "Đóng"
